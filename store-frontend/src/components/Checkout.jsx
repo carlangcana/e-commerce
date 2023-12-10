@@ -4,6 +4,7 @@ import image from "../img/farm.jpeg";
 export default function Checkout ({ data, count, onSetCart }) {
 
     let items = data;
+    console.log(items);
 
     const handleDelete = (item) => {
         onSetCart(item);
