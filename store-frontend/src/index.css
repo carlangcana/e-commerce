@@ -186,6 +186,31 @@ a {
   background-color: rgb(219, 85, 7);
 }
 
+.search-text{
+  padding: 6px 12px;
+  width: 50%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #ffffff9d;
+  background-clip: padding-box;
+  border: 0px solid #ced4da;
+  appearance: none;
+  border-radius: 4px;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.search-text:hover{
+  background-color: #ffffffe9;
+}
+
+.search-text:focus{
+  outline: none;
+  background-color: #ffffffe9;
+
+}
+
 .bootstrap{
   margin: 5px 0 10px;
   padding: 6px 12px;

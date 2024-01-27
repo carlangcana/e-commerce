@@ -49,7 +49,7 @@ function AddProductForm() {
       <label>
         Product Type:<br/>
         <select className="bootstrap bootstrap-select" name="productType" onChange={handleChange} >
-          <option value="" selected>Select Product Type</option>
+          <option value="" defaultValue>Select Product Type</option>
           <option value='1'>Crop</option>
           <option value='2'>Poultry</option>
         </select>

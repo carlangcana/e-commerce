@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Market from "../components/Market";
 import Cart from "../components/Cart";
 import AddProductForm from "../components/AddProductForm";
-import ManageProduct from "../components/ManageProduct";
+import ManageProduct from "../components/ManageProductForm";
 import Footer from "../components/Footer";
 import '../index.css';
 
@@ -29,21 +29,22 @@ function Store() {
   
   const addToCart = (item) => {
     setCart([...cart, item]);
-    setCount(count + 1); 
+    setCount(parseInt(count) + parseInt(item.itemCount)); // Ensure count is an integer
   };
 
-  const deleteFromCart = (index) => {
-    const updatedCart = [...cart];
-    updatedCart.splice(index, 1);
-    setCart(updatedCart);
-    setCount(count - 1);
+  const deleteFromCart = (index, item) => {
+    console.log("Deleting item at index:", index, "with data:", item);
+    if (item && item.itemCount) {
+      const updatedCart = [...cart];
+      updatedCart.splice(index, 1);
+      setCart(updatedCart);
+      setCount(prevCount => prevCount - parseInt(item.itemCount));
+    }
   };
-
+  
   const addToCheckOut = (item) => {
     setCheckout([...checkout, item]);
   }
-
-  console.log(checkout);
 
   const menus = [
     { name: "Marketplace", url: "/", id: 1 },

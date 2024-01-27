@@ -18,8 +18,8 @@ function Cart({title, items, count, onSetCart, onCheckOut}) {
                     userId: 1101008,
                     transactionId: generateTransactionId(),
                     productId: item[i].productId,
+                    itemCount: item[i].itemCount,
                 };
-
                 const response = await axios.post("http://localhost:3001/save-transact", cartData);
                 console.log(response.data);
             } catch (error) {
@@ -29,9 +29,10 @@ function Cart({title, items, count, onSetCart, onCheckOut}) {
         window.location.reload();
     }
 
-    const handleDeleteFromCart = (item) => {
-        onSetCart(item);
-    }
+    const handleDeleteFromCart = (index, item) => {
+        onSetCart(index, item);
+      };
+      
 
     return(
         <div className="cart">
@@ -42,10 +43,13 @@ function Cart({title, items, count, onSetCart, onCheckOut}) {
                     <li key={index}>
                         <div className="cart-card">
                             <div className="cart-card-item">
+                                {console.log(item)}
                                 {item.productName.length > 15 ? `${item.productName.slice(0, 15)}...` : item.productName}
+                                ({item.itemCount})
                             </div>
+                            
                             <div className="cart-card-item">
-                                <button className="delete-button" onClick={() => handleDeleteFromCart(index)}>✖</button>
+                                <button className="delete-button" onClick={() => handleDeleteFromCart(index, item)}>✖</button>
                             </div>
                         </div>
                     </li>

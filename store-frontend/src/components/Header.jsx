@@ -7,6 +7,7 @@ export default function header(props){
         <>
             <div className="header">
                 <div className="title header-item"><a href="./">{props.title}</a></div>
+                <div className="title header-item"><input type="text" className="search-text" placeholder="Search"/></div>
                 <div className="menus header-item">
                     <ul>
                         {
