@@ -10,15 +10,17 @@ const Transaction = mongoose.model('transactions', {
     userId: Number,
     transactionId: String,
     productId: Number,
+    quantity: Number,
 });
 
 const save_transaction = async (req, res) => {
     try{
-        const { userId, transactionId, productId } = req.body;
+        const { userId, transactionId, productId, quantity } = req.body;
         const newTransact = new Transaction({
             userId: userId,
             transactionId: transactionId,
             productId: productId,
+            quantity: quantity,
         });
         console.log("Cart saved");
         await newTransact.save();
