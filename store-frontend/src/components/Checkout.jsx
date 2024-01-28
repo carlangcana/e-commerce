@@ -20,7 +20,11 @@ export default function Checkout ({ data, count, onSetCart }) {
                             <img src={image} alt="Appliances" />
                             <p className="title">{order.orderDetails.productName}</p>
                             <p className="desc">{order.orderDetails.productDesc}</p>
-                            <button className="amber-button" onClick={() => handleDelete(order.transactionId)}>Delete</button>
+                            <p className="desc">Quantity: {order.itemCount}</p>
+                            <div className="button-container">
+                                <button className="delete-button" onClick={() => handleDelete(order.transactionId)}>Cancel</button>
+                                <button className="green-button" onClick={() => handleDelete(order.transactionId)}>Buy</button>
+                            </div>
                         </li>
                     ))
                 }

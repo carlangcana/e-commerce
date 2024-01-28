@@ -47,12 +47,21 @@ function Market({ data, onSetCart }) {
                   onChange={(e) => handleQuantityChange(e, item.productId)}
                   placeholder="Product QTY"
                 />
-                <button
-                  className="amber-button"
-                  onClick={() => handleAddToCart(item)}
-                >
-                  Add to Cart
-                </button>
+                <div className="button-container"> 
+                 
+                  <button
+                    className="gray-button"
+                    // onClick={() => handleAddToCart(item)}
+                  >
+                    ⚠️ Report
+                  </button>
+                  <button
+                    className="amber-button"
+                    onClick={() => handleAddToCart(item)}
+                  >
+                    🛒 Add to cart
+                  </button>
+                </div>
               </li>
             ))}
           </ul>

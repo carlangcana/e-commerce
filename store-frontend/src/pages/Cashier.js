@@ -14,7 +14,7 @@ const Cashier = (items) => {
     var [cart, setCart] = useState([]);
     var [count, setCount] = useState(0);
 
-    // This will provide all the items in the "My Orders" page
+    // This will provide all the items in the "My Orders" page. Like some sort of union
     useEffect(() => {
         const fetchCart = async () => {
         try {
